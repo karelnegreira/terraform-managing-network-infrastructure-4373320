@@ -1,6 +1,6 @@
 resource "aws_key_pair" "test" {
   key_name   = local.key_pair_name
-  public_key = file(var.public_key)
+  public_key = file("/home/karel/.ssh/id_rsa.pub")
 }
 
 resource "aws_instance" "test" {

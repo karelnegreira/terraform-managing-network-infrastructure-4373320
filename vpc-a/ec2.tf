@@ -4,7 +4,7 @@ resource "random_id" "dev" {
 
 resource "aws_key_pair" "dev" {
   key_name   = random_id.dev.hex
-  public_key = file(var.public_key)
+  public_key = file("/home/karel/.ssh/id_rsa.pub")
 }
 
 resource "aws_instance" "dev" {
